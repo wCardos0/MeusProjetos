@@ -86,7 +86,7 @@ nav {grid-area: nav;} /* Define a área do grid para o elemento nav */
 |--------  AREA DE ELEMENTOS COMPARTILHADOS ENTRE AS PAGINAS  ------------|
 |------------------------------------------------------------------------------------------------------------------|
 */
-.index-page, .aboutus-page, .project-page {  /* Seleciona as páginas específicas */
+.index-page, .about-page, .project-page {  /* Seleciona as páginas específicas */
     body {                          /* Aplica estilos ao elemento body */
         display: flex ; /* Define o layout do elemento como flexível */
         justify-content: center; /* Centraliza os itens horizontalmente no contêiner flexível */
@@ -282,7 +282,7 @@ nav {grid-area: nav;} /* Define a área do grid para o elemento nav */
 |------------------------------------------------------------------------------------------------------------------|
 |---------------  AREA DE ELEMENTOS DA PAGINA SOBRE MIM  -----------------------------|
 |------------------------------------------------------------------------------------------------------------------|
-*/.aboutus-page {
+*/.about-page {
      main {
     display: grid; /* Define o layout do elemento main como um grid (grade), permitindo o uso de áreas e posicionamento de itens em uma estrutura de grid */
     grid-template-areas:
