@@ -1,0 +1,381 @@
+* {
+    padding: 0 auto; /* Define o padding como 0 e centraliza horizontalmente (não recomendado, padding não pode ser auto) */
+    margin: 0 auto; /* Define a margem como 0 e centraliza horizontalmente */
+    box-sizing: border-box; /* Inclui padding e bordas no tamanho total dos elementos */
+    font-family: 'Times New Roman', Times, serif; /* Define a fonte como 'Times New Roman', com alternativas serifadas */
+    text-decoration: none; /* Remove qualquer decoração de texto (como sublinhado) */
+}
+/*
+|------------------------------------------------------------------------------------------------------------------|
+|---------------- LOCAL PARA NOMEAÇÕES DE ELEMENTOS GRID -------------------------|
+|------------------------------------------------------------------------------------------------------------------|
+*/
+header {grid-area: header;} /* Define a área do grid para o elemento header */
+main {grid-area: main;} /* Define a área do grid para o elemento main */
+footer {grid-area: footer;} /* Define a área do grid para o elemento footer */
+nav {grid-area: nav;} /* Define a área do grid para o elemento nav */
+.btn {grid-area: btn;} /* Define a área do grid para o elemento .btn */
+.bloco-a {grid-area: bloco-a;} /* Define a área do grid para o elemento .bloco-a */
+.bloco-b {grid-area: bloco-b;} /* Define a área do grid para o elemento .bloco-b */
+.bloco-c {grid-area: bloco-c;} /* Define a área do grid para o elemento .bloco-c */
+.bloco-d {grid-area: bloco-d;} /* Define a área do grid para o elemento .bloco-d */
+.name {grid-area: name;} /* Define a área do grid para o elemento .name */
+
+
+/*
+|------------------------------------------------------------------------------------------------------------------|
+|-----------   CONFIGURAÇÕES PARA PAGINAS EXIBIDAS EM DESKTOP    -------------|
+|------------------------------------------------------------------------------------------------------------------|
+*/
+@media (min-width: 767px) {
+    body header {
+        display: grid; /* Define o layout do header como grid */
+        grid-template-areas: /* Define as áreas do grid para o header */
+        ". . . btn" /* Define a área do botão (btn) no canto superior direito */
+        "name . . nav"; /* Define a área do nome (name) e da navegação (nav) na linha abaixo */
+        gap: 4em; /* Define o espaçamento entre os itens do grid */
+        margin-top: 10px;
+    }
+    body footer {
+        display: grid; /* Define o layout do footer como grid */
+        grid-template-areas: /* Define as áreas do grid para o footer */
+        "bloco-a bloco-b" /* Define a área para bloco-a e bloco-b na primeira linha */
+        "bloco-c bloco-c"; /* Define a área para bloco-c ocupando toda a segunda linha */
+        gap: 10px; /* Define o espaçamento entre os itens do grid */
+        background-color: #000; /* Define a cor de fundo do footer como preto */
+        color: #fff; /* Define a cor do texto no footer como branco */
+            width: 100%; /* Define a largura da imagem como 100% do contêiner pai, fazendo com que ela ocupe toda a largura disponível */
+            margin-top: 10dvh; /* Adiciona uma margem superior de 10 unidades de viewport em altura (dvh), que é uma unidade relativa ao 1% da altura da área visível da janela */
+            height: 100%; /* Define a altura da imagem como 100% da altura do contêiner pai, o que pode causar distorção se a proporção não for preservada */
+          }
+          
+    }
+    header .navbar .sidebar .libar {
+        margin: 0 20px; /* Define a margem de 0 pixels no topo e na parte inferior, e 20 pixels nas laterais esquerda e direita */
+    }
+    header .navbar .sidebar {
+        justify-content: center; /* Alinha horizontalmente os itens no centro do contêiner (usando Flexbox) */
+        align-items: center;     /* Alinha verticalmente os itens no centro do contêiner (usando Flexbox) */
+    }
+    footer .bloco-a .navbar .sidebar {
+        display: flex;            /* Define o layout do contêiner como Flexbox para um layout flexível dos itens */
+        flex-direction: column;   /* Organiza os itens em uma coluna, do topo para a base do contêiner */
+        align-items: center;      /* Alinha os itens horizontalmente no centro do contêiner */
+        justify-content: start;   /* Alinha os itens verticalmente ao início do contêiner (topo) */
+    }
+    footer .bloco-b .navbar .sidebar .libar {
+        margin: 10px 10px; /* Define uma margem de 10 pixels em todos os lados (superior, inferior, esquerdo e direito) */
+    }
+    footer {
+        .bloco-a {
+            display: flex; /* Define o layout do contêiner .bloco-a como Flexbox, permitindo um layout flexível dos itens internos */
+        }
+        .bloco-b {
+            display: flex; /* Define o layout do contêiner .bloco-b como Flexbox, permitindo um layout flexível dos itens internos */
+        }
+        .bloco-c {
+            display: flex; /* Define o layout do contêiner .bloco-c como Flexbox, permitindo um layout flexível dos itens internos */
+        }
+        .bloco-d {
+            display: flex; /* Define o layout do contêiner .bloco-d como Flexbox, permitindo um layout flexível dos itens internos */
+        }
+    }
+
+/*
+|------------------------------------------------------------------------------------------------------------------|
+|--------  AREA DE ELEMENTOS COMPARTILHADOS ENTRE AS PAGINAS  ------------|
+|------------------------------------------------------------------------------------------------------------------|
+*/
+.index-page, .aboutus-page, .project-page {  /* Seleciona as páginas específicas */
+    body {                          /* Aplica estilos ao elemento body */
+        display: flex ; /* Define o layout do elemento como flexível */
+        justify-content: center; /* Centraliza os itens horizontalmente no contêiner flexível */
+        align-items: center; /* Centraliza os itens verticalmente no contêiner flexível */
+        flex-direction: column; /* Alinha os itens em uma coluna (verticalmente) */
+        color: #000;              /* Define a cor do texto como preto */
+        font-size: 14px;   /* Define o tamanho da fonte como 14 pixels */
+        overflow-x: hidden;
+    }footer .bloco-a .libar {
+        border-bottom: 1px solid gray; /* Adiciona uma borda inferior de 1px de largura, sólida e na cor cinza ao elemento .libar dentro de .bloco-a no footer */
+        padding: 10px; /* Adiciona um preenchimento interno de 10px ao redor do conteúdo do elemento .libar dentro de .bloco-a no footer */
+    }
+    footer .bloco-a .linkbar {
+        color: white; /* Define a cor do texto como branco para o elemento .linkbar dentro de .bloco-a no footer */
+    }
+    footer .bloco-a h3 {
+        text-transform: uppercase; /* Transforma o texto dentro do elemento <h3> em maiúsculas */
+        font-size: 1.5em; /* Define o tamanho da fonte como 1.5 vezes o tamanho da fonte do elemento pai */
+    }
+    footer .bloco-b {
+        text-transform: uppercase; /* Transforma o texto dentro do contêiner .bloco-b em maiúsculas */
+        font-size: 1.5em; /* Define o tamanho da fonte dentro de .bloco-b como 1.5 vezes o tamanho da fonte do elemento pai */
+    }
+    main h3 {
+        font-size: 2em; /* Define o tamanho da fonte para o elemento <h3> dentro de <main> como 2 vezes o tamanho da fonte do elemento pai */
+        color: crimson; /* Define a cor do texto como vermelho escuro (crimson) para o elemento <h3> dentro de <main> */
+        padding: 10px; /* Adiciona um preenchimento interno de 10px ao redor do conteúdo do elemento <h3> dentro de <main> */
+    }
+        footer, header { 
+        .navbar .sidebar {
+            list-style: none; /* Remove os marcadores ou números padrão das listas no elemento .sidebar dentro do header e footer */
+            display: flex; /* Define o layout da lista como flexível, permitindo o alinhamento dos itens em linha ou coluna */
+        }
+    }
+    header .linkbar {
+        color: crimson; /* Define a cor do texto como vermelho escuro (crimson) para o elemento .linkbar dentro do header */
+        padding: 10px 0; /* Adiciona um preenchimento interno de 10px no topo e na parte inferior, mas sem preenchimento nas laterais (esquerda e direita) */
+        transition: 0.9s; /* Define a duração da transição de estilo como 0.9 segundos, para animações suaves quando as propriedades do elemento mudam */
+    }
+    header .linkbar:hover {
+        border-bottom: 1px solid crimson; /* Adiciona uma borda inferior de 1px de largura, sólida e na cor vermelho escuro (crimson) ao elemento .linkbar quando o mouse está sobre ele */
+        color: black; /* Altera a cor do texto para preto quando o mouse está sobre o elemento .linkbar */
+        transition: 0.9s; /* Define a duração da transição de estilo como 0.9 segundos, aplicando a mudança de forma suave */
+    }
+    body.dark header .linkbar {
+        color: gold; /* Define a cor do texto como dourado para o elemento .linkbar dentro do header quando o corpo da página tem a classe 'dark' */
+        transition: 0.9s; /* Define a duração da transição de estilo como 0.9 segundos, aplicando a mudança de forma suave */
+    }
+    body.dark header .linkbar:hover {
+        color: violet; /* Altera a cor do texto para violeta quando o mouse está sobre o elemento .linkbar, enquanto o corpo da página tem a classe 'dark' */
+        border-bottom: 1px solid gold; /* Adiciona uma borda inferior de 1px de largura, sólida e na cor dourada ao elemento .linkbar quando o mouse está sobre ele e o corpo da página tem a classe 'dark' */
+        transition: 0.9s; /* Define a duração da transição de estilo como 0.9 segundos, aplicando a mudança de forma suave */
+    }
+        .bg {
+        background-color: rgb(223, 222, 215); /* Define a cor de fundo para o elemento com a classe .bg */
+        border-radius: 10px; /* Define o raio de arredondamento das bordas como 10 pixels, criando bordas arredondadas para o elemento */
+
+    }.dark {
+        background-color: #000; /* Define a cor de fundo como preto para elementos com a classe .dark */
+        color: #fff; /* Define a cor do texto como branco para elementos com a classe .dark */
+    }
+    
+    body.dark .bg {
+        background-color: #4e4e4e; /* Define a cor de fundo como cinza escuro para o elemento com a classe .bg quando o body tem a classe .dark */
+    }
+    
+    body.dark footer {
+        background-color: #4e4e4e; /* Define a cor de fundo como cinza escuro para o footer quando o body tem a classe .dark */
+    }
+    .bloco-a {
+        display: flex; /* Define o layout interno dos blocos como flexível */
+        flex-direction: column; /* Alinha os itens verticalmente (em coluna) */
+        padding: 20px; /* Adiciona um padding de 20px ao redor do conteúdo dos blocos */
+        justify-content: center; /* Centraliza o conteúdo verticalmente no bloco */
+        align-items: center; /* Centraliza o conteúdo horizontalmente no bloco */
+    }
+    .bloco-b {
+        display: flex; /* Define o layout interno dos blocos como flexível */
+        flex-direction: column; /* Alinha os itens verticalmente (em coluna) */
+        padding: 20px; /* Adiciona um padding de 20px ao redor do conteúdo dos blocos */
+        justify-content: center; /* Centraliza o conteúdo verticalmente no bloco */
+        align-items: center; /* Centraliza o conteúdo horizontalmente no bloco */
+    }
+    .bloco-c {
+        display: flex; /* Define o layout interno dos blocos como flexível */
+        flex-direction: column; /* Alinha os itens verticalmente (em coluna) */
+        padding: 20px; /* Adiciona um padding de 20px ao redor do conteúdo dos blocos */
+        justify-content: center; /* Centraliza o conteúdo verticalmente no bloco */
+        align-items: center; /* Centraliza o conteúdo horizontalmente no bloco */
+    }
+    .bloco-d {
+        display: flex; /* Define o layout interno dos blocos como flexível */
+        flex-direction: column; /* Alinha os itens verticalmente (em coluna) */
+        padding: 20px; /* Adiciona um padding de 20px ao redor do conteúdo dos blocos */
+        justify-content: center; /* Centraliza o conteúdo verticalmente no bloco */
+        align-items: center; /* Centraliza o conteúdo horizontalmente no bloco */
+    }
+    
+    .b-tl {
+        border-top: 1px solid crimson; /* Define uma borda superior de 1px com cor carmesim */
+        border-left: 1px solid crimson; /* Define uma borda esquerda de 1px com cor carmesim */
+        padding: 10px; /* Adiciona um padding de 10px ao redor do conteúdo dos blocos */
+    }
+    
+    .b-br {
+        border-right: 1px solid crimson; /* Define uma borda direita de 1px com cor carmesim */
+        border-bottom: 1px solid crimson; /* Define uma borda inferior de 1px com cor carmesim */
+        padding: 10px; /* Adiciona um padding de 10px ao redor do conteúdo dos blocos */
+    }
+    
+    .b-tr {
+        border-top: 1px solid crimson; /* Define uma borda superior de 1px com cor carmesim */
+        border-right: 1px solid crimson; /* Define uma borda direita de 1px com cor carmesim */
+        padding: 10px; /* Adiciona um padding de 10px ao redor do conteúdo dos blocos */
+    }
+    
+    .b-bl {
+        border-left: 1px solid crimson; /* Define uma borda esquerda de 1px com cor carmesim */
+        border-bottom: 1px solid crimson; /* Define uma borda inferior de 1px com cor carmesim */
+        padding: 10px; /* Adiciona um padding de 10px ao redor do conteúdo dos blocos */
+    }
+    
+    .b-rb {
+        border-right: 1px solid crimson; /* Define uma borda direita de 1px com cor carmesim */
+        border-bottom: 1px solid crimson; /* Define uma borda inferior de 1px com cor carmesim */
+    }
+    
+    body.dark .b-br {
+        border-right: 1px solid gold; /* Altera a borda direita para 1px com cor dourada no tema escuro */
+        border-bottom: 1px solid gold; /* Altera a borda inferior para 1px com cor dourada no tema escuro */
+    }
+    
+    body.dark .b-tr {
+        border-top: 1px solid gold; /* Altera a borda superior para 1px com cor dourada no tema escuro */
+        border-right: 1px solid gold; /* Altera a borda direita para 1px com cor dourada no tema escuro */
+    }
+    
+    body.dark .b-bl {
+        border-left: 1px solid gold; /* Altera a borda esquerda para 1px com cor dourada no tema escuro */
+        border-bottom: 1px solid gold; /* Altera a borda inferior para 1px com cor dourada no tema escuro */
+    }
+    
+    body.dark .b-tl {
+        border-top: 1px solid gold; /* Altera a borda superior para 1px com cor dourada no tema escuro */
+        border-left: 1px solid gold; /* Altera a borda esquerda para 1px com cor dourada no tema escuro */
+    }
+    
+    .trilho {
+        background-color: silver; /* Define a cor de fundo do trilho como prata */
+        border-radius: 40px; /* Define bordas arredondadas com raio de 40px */
+        border: none; /* Remove a borda padrão */
+        width: 80px; /* Define a largura do trilho como 80px */
+        height: 30px; /* Define a altura do trilho como 30px */
+        transition: 0.5s; /* Adiciona uma transição suave de 0.5 segundos para mudanças de estilo */
+        position: relative; /* Define a posição relativa para posicionamento dos filhos */
+        cursor: pointer; /* Define o cursor como ponteiro para indicar interatividade */
+    }
+    
+    .trilho .seletor {
+        display: flex; /* Define o layout interno do seletor como flexível */
+        background-color: gray; /* Define a cor de fundo do seletor como cinza */
+        border-radius: 50%; /* Define bordas arredondadas com raio de 50% para criar um círculo */
+        border: none; /* Remove a borda padrão */
+        width: 30px; /* Define a largura do seletor como 30px */
+        height: 30px; /* Define a altura do seletor como 30px */
+        color: orange; /* Define a cor do texto no seletor como laranja */
+        align-items: center; /* Alinha os itens verticalmente no centro do seletor */
+        text-align: center; /* Alinha o texto horizontalmente no centro do seletor */
+        left: 0px; /* Define a posição horizontal do seletor como 0px */
+        position: absolute; /* Define a posição absoluta para o seletor dentro do trilho */
+        transform: scale(0.8); /* Reduz o tamanho do seletor para 80% do tamanho original */
+        transition: 0.9s; /* Adiciona uma transição suave de 0.9 segundos para mudanças de estilo */
+    }
+    
+    body.dark .trilho .seletor {
+        left: 50px; /* Muda a posição horizontal do seletor para 50px quando o tema escuro está ativo */
+        color: white; /* Define a cor do texto no seletor como branco quando o tema escuro está ativo */
+        font-weight: bold; /* Define o peso da fonte como negrito quando o tema escuro está ativo */
+        background-color: green; /* Define a cor de fundo do seletor como verde quando o tema escuro está ativo */
+    }
+    .name {
+        font-size: 3em; /* Define o tamanho da fonte como 3 vezes o tamanho da fonte do elemento pai, aumentando significativamente o texto para destacá-lo */
+        padding: 0 0 0 1em; /* Adiciona um preenchimento interno de 1em apenas à esquerda do elemento, enquanto o preenchimento superior, direito e inferior é definido como 0 */
+    }
+        footer, header { 
+    .navbar .sidebar {
+        list-style: none; /* Remove os marcadores ou números padrão das listas no elemento .sidebar dentro do header e footer */
+        display: flex; /* Define o layout da lista como flexível, permitindo o alinhamento dos itens em linha ou coluna */
+    }
+}
+}
+/*
+|------------------------------------------------------------------------------------------------------------------|
+|---------------  AREA DE ELEMENTOS DA PAGINA SOBRE MIM  -----------------------------|
+|------------------------------------------------------------------------------------------------------------------|
+*/.aboutus-page {
+     main {
+    display: grid; /* Define o layout do elemento main como um grid (grade), permitindo o uso de áreas e posicionamento de itens em uma estrutura de grid */
+    grid-template-areas:
+        "bloco-a bloco-b" /* Define a estrutura das áreas no grid: a primeira linha terá os itens 'bloco-a' e 'bloco-b' */
+        "bloco-c bloco-d"; /* Define a estrutura das áreas na segunda linha: terá os itens 'bloco-c' e 'bloco-d' */
+    gap: 10px; /* Define o espaço entre as células do grid como 10 pixels, criando uma separação visual entre os itens */
+    padding: 20px; /* Adiciona um preenchimento interno de 20 pixels ao redor do conteúdo do elemento main, garantindo que o conteúdo não fique colado nas bordas */
+     }
+main .bloco-a {
+        width: 500px;
+        height: auto;
+        box-shadow: 1px 1px 20px #000;
+        border-radius: 10px;
+        transition: 0.9s;
+        border: none;
+    }
+main .bloco-b {
+        width: 500px;
+        height: auto;
+        box-shadow: 1px 1px 20px #000;
+        border-radius: 10px;
+        transition: 0.9s;
+        border: none;
+    }
+main .bloco-c { 
+        width: 500px;
+        height: auto;
+        box-shadow: 1px 1px 20px #000;
+        border-radius: 10px;
+        transition: 0.9s;
+        border: none;
+    }
+main .bloco-d { 
+        width: 500px;
+        height: auto;
+        box-shadow: 1px 1px 20px #000;
+        border-radius: 10px;
+        transition: 0.9s;
+        border: none;
+    }
+body.dark main .bloco-a {
+    box-shadow: 1px 1px 20px gray;
+    transition: 0.9s;
+    border-radius: 10px;
+    border: none;
+    }
+body.dark main .bloco-b {
+    box-shadow: 1px 1px 20px gray;
+    transition: 0.9s;
+    border-radius: 10px;
+    border: none;
+    }
+body.dark main .bloco-c {
+    box-shadow: 1px 1px 20px gray;
+    transition: 0.9s;
+    border-radius: 10px;
+    border: none;
+    }
+body.dark main .bloco-d {
+        box-shadow: 1px 1px 20px gray;
+        transition: 0.9s;
+        border-radius: 10px;
+        border: none;
+    }
+    main .bloco-b .photo {
+        max-width: 30%;
+        height: auto;
+    }
+}
+    .index-page {
+        main {
+            display: grid;
+            grid-template-areas:
+            "bloco-a bloco-b"
+            "bloco-a bloco-b";
+            gap: 10px;
+        }
+        main .photo {
+            width: 50%;
+            height: auto;
+        }
+        main .bloco-a {
+            width: 500px;
+        }
+        main .bloco-b {
+            width: 500px;
+        }
+        main .title {
+            font-size: 2em;
+            color: crimson;
+            padding: 0 3em;
+        }
+        body.dark main .title {
+            color: gold;
+        }
+    }
