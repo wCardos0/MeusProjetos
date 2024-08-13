@@ -48,7 +48,6 @@ nav {grid-area: nav;} /* Define a área do grid para o elemento nav */
             margin-top: 10dvh; /* Adiciona uma margem superior de 10 unidades de viewport em altura (dvh), que é uma unidade relativa ao 1% da altura da área visível da janela */
             height: 100%; /* Define a altura da imagem como 100% da altura do contêiner pai, o que pode causar distorção se a proporção não for preservada */
           }
-          
     }
     header .navbar .sidebar .libar {
         margin: 0 20px; /* Define a margem de 0 pixels no topo e na parte inferior, e 20 pixels nas laterais esquerda e direita */
@@ -115,7 +114,7 @@ nav {grid-area: nav;} /* Define a área do grid para o elemento nav */
         color: crimson; /* Define a cor do texto como vermelho escuro (crimson) para o elemento <h3> dentro de <main> */
         padding: 10px; /* Adiciona um preenchimento interno de 10px ao redor do conteúdo do elemento <h3> dentro de <main> */
     }
-        footer, header { 
+        footer, header {
         .navbar .sidebar {
             list-style: none; /* Remove os marcadores ou números padrão das listas no elemento .sidebar dentro do header e footer */
             display: flex; /* Define o layout da lista como flexível, permitindo o alinhamento dos itens em linha ou coluna */
@@ -148,11 +147,9 @@ nav {grid-area: nav;} /* Define a área do grid para o elemento nav */
         background-color: #000; /* Define a cor de fundo como preto para elementos com a classe .dark */
         color: #fff; /* Define a cor do texto como branco para elementos com a classe .dark */
     }
-    
     body.dark .bg {
         background-color: #4e4e4e; /* Define a cor de fundo como cinza escuro para o elemento com a classe .bg quando o body tem a classe .dark */
     }
-    
     body.dark footer {
         background-color: #4e4e4e; /* Define a cor de fundo como cinza escuro para o footer quando o body tem a classe .dark */
     }
@@ -184,56 +181,46 @@ nav {grid-area: nav;} /* Define a área do grid para o elemento nav */
         justify-content: center; /* Centraliza o conteúdo verticalmente no bloco */
         align-items: center; /* Centraliza o conteúdo horizontalmente no bloco */
     }
-    
     .b-tl {
         border-top: 1px solid crimson; /* Define uma borda superior de 1px com cor carmesim */
         border-left: 1px solid crimson; /* Define uma borda esquerda de 1px com cor carmesim */
         padding: 10px; /* Adiciona um padding de 10px ao redor do conteúdo dos blocos */
     }
-    
     .b-br {
         border-right: 1px solid crimson; /* Define uma borda direita de 1px com cor carmesim */
         border-bottom: 1px solid crimson; /* Define uma borda inferior de 1px com cor carmesim */
         padding: 10px; /* Adiciona um padding de 10px ao redor do conteúdo dos blocos */
     }
-    
     .b-tr {
         border-top: 1px solid crimson; /* Define uma borda superior de 1px com cor carmesim */
         border-right: 1px solid crimson; /* Define uma borda direita de 1px com cor carmesim */
         padding: 10px; /* Adiciona um padding de 10px ao redor do conteúdo dos blocos */
     }
-    
     .b-bl {
         border-left: 1px solid crimson; /* Define uma borda esquerda de 1px com cor carmesim */
         border-bottom: 1px solid crimson; /* Define uma borda inferior de 1px com cor carmesim */
         padding: 10px; /* Adiciona um padding de 10px ao redor do conteúdo dos blocos */
     }
-    
     .b-rb {
         border-right: 1px solid crimson; /* Define uma borda direita de 1px com cor carmesim */
         border-bottom: 1px solid crimson; /* Define uma borda inferior de 1px com cor carmesim */
     }
-    
     body.dark .b-br {
         border-right: 1px solid gold; /* Altera a borda direita para 1px com cor dourada no tema escuro */
         border-bottom: 1px solid gold; /* Altera a borda inferior para 1px com cor dourada no tema escuro */
     }
-    
     body.dark .b-tr {
         border-top: 1px solid gold; /* Altera a borda superior para 1px com cor dourada no tema escuro */
         border-right: 1px solid gold; /* Altera a borda direita para 1px com cor dourada no tema escuro */
     }
-    
     body.dark .b-bl {
         border-left: 1px solid gold; /* Altera a borda esquerda para 1px com cor dourada no tema escuro */
         border-bottom: 1px solid gold; /* Altera a borda inferior para 1px com cor dourada no tema escuro */
     }
-    
     body.dark .b-tl {
         border-top: 1px solid gold; /* Altera a borda superior para 1px com cor dourada no tema escuro */
         border-left: 1px solid gold; /* Altera a borda esquerda para 1px com cor dourada no tema escuro */
     }
-    
     .trilho {
         background-color: silver; /* Define a cor de fundo do trilho como prata */
         border-radius: 40px; /* Define bordas arredondadas com raio de 40px */
@@ -244,7 +231,6 @@ nav {grid-area: nav;} /* Define a área do grid para o elemento nav */
         position: relative; /* Define a posição relativa para posicionamento dos filhos */
         cursor: pointer; /* Define o cursor como ponteiro para indicar interatividade */
     }
-    
     .trilho .seletor {
         display: flex; /* Define o layout interno do seletor como flexível */
         background-color: gray; /* Define a cor de fundo do seletor como cinza */
@@ -260,7 +246,6 @@ nav {grid-area: nav;} /* Define a área do grid para o elemento nav */
         transform: scale(0.8); /* Reduz o tamanho do seletor para 80% do tamanho original */
         transition: 0.9s; /* Adiciona uma transição suave de 0.9 segundos para mudanças de estilo */
     }
-    
     body.dark .trilho .seletor {
         left: 50px; /* Muda a posição horizontal do seletor para 50px quando o tema escuro está ativo */
         color: white; /* Define a cor do texto no seletor como branco quando o tema escuro está ativo */
@@ -271,7 +256,7 @@ nav {grid-area: nav;} /* Define a área do grid para o elemento nav */
         font-size: 3em; /* Define o tamanho da fonte como 3 vezes o tamanho da fonte do elemento pai, aumentando significativamente o texto para destacá-lo */
         padding: 0 0 0 1em; /* Adiciona um preenchimento interno de 1em apenas à esquerda do elemento, enquanto o preenchimento superior, direito e inferior é definido como 0 */
     }
-        footer, header { 
+        footer, header {
     .navbar .sidebar {
         list-style: none; /* Remove os marcadores ou números padrão das listas no elemento .sidebar dentro do header e footer */
         display: flex; /* Define o layout da lista como flexível, permitindo o alinhamento dos itens em linha ou coluna */
@@ -307,7 +292,7 @@ main .bloco-b {
         transition: 0.9s;
         border: none;
     }
-main .bloco-c { 
+main .bloco-c {
         width: 500px;
         height: auto;
         box-shadow: 1px 1px 20px #000;
@@ -315,7 +300,7 @@ main .bloco-c {
         transition: 0.9s;
         border: none;
     }
-main .bloco-d { 
+main .bloco-d {
         width: 500px;
         height: auto;
         box-shadow: 1px 1px 20px #000;
@@ -350,6 +335,21 @@ body.dark main .bloco-d {
     main .bloco-b .photo {
         max-width: 30%;
         height: auto;
+    }
+    body.dark main h3 {
+        color: gold;
+    }
+    body.dark main {
+        color: white;
+    }
+    body main a {
+        color: blue;
+        font-style: italic;
+    }
+    body.dark main a {
+        text-decoration: none;
+        color: cyan;
+
     }
 }
     .index-page {
