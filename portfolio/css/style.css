@@ -20,66 +20,6 @@ nav {grid-area: nav;} /* Define a área do grid para o elemento nav */
 .bloco-c {grid-area: bloco-c;} /* Define a área do grid para o elemento .bloco-c */
 .bloco-d {grid-area: bloco-d;} /* Define a área do grid para o elemento .bloco-d */
 .name {grid-area: name;} /* Define a área do grid para o elemento .name */
-
-
-/*
-|------------------------------------------------------------------------------------------------------------------|
-|-----------   CONFIGURAÇÕES PARA PAGINAS EXIBIDAS EM DESKTOP    -------------|
-|------------------------------------------------------------------------------------------------------------------|
-*/
-@media (min-width: 767px) {
-    body header {
-        display: grid; /* Define o layout do header como grid */
-        grid-template-areas: /* Define as áreas do grid para o header */
-        ". . . btn" /* Define a área do botão (btn) no canto superior direito */
-        "name . . nav"; /* Define a área do nome (name) e da navegação (nav) na linha abaixo */
-        gap: 4em; /* Define o espaçamento entre os itens do grid */
-        margin-top: 10px;
-    }
-    body footer {
-        display: grid; /* Define o layout do footer como grid */
-        grid-template-areas: /* Define as áreas do grid para o footer */
-        "bloco-a bloco-b" /* Define a área para bloco-a e bloco-b na primeira linha */
-        "bloco-c bloco-c"; /* Define a área para bloco-c ocupando toda a segunda linha */
-        gap: 10px; /* Define o espaçamento entre os itens do grid */
-        background-color: #000; /* Define a cor de fundo do footer como preto */
-        color: #fff; /* Define a cor do texto no footer como branco */
-            width: 100%; /* Define a largura da imagem como 100% do contêiner pai, fazendo com que ela ocupe toda a largura disponível */
-            margin-top: 10dvh; /* Adiciona uma margem superior de 10 unidades de viewport em altura (dvh), que é uma unidade relativa ao 1% da altura da área visível da janela */
-            height: 100%; /* Define a altura da imagem como 100% da altura do contêiner pai, o que pode causar distorção se a proporção não for preservada */
-          }
-    }
-    header .navbar .sidebar .libar {
-        margin: 0 20px; /* Define a margem de 0 pixels no topo e na parte inferior, e 20 pixels nas laterais esquerda e direita */
-    }
-    header .navbar .sidebar {
-        justify-content: center; /* Alinha horizontalmente os itens no centro do contêiner (usando Flexbox) */
-        align-items: center;     /* Alinha verticalmente os itens no centro do contêiner (usando Flexbox) */
-    }
-    footer .bloco-a .navbar .sidebar {
-        display: flex;            /* Define o layout do contêiner como Flexbox para um layout flexível dos itens */
-        flex-direction: column;   /* Organiza os itens em uma coluna, do topo para a base do contêiner */
-        align-items: center;      /* Alinha os itens horizontalmente no centro do contêiner */
-        justify-content: start;   /* Alinha os itens verticalmente ao início do contêiner (topo) */
-    }
-    footer .bloco-b .navbar .sidebar .libar {
-        margin: 10px 10px; /* Define uma margem de 10 pixels em todos os lados (superior, inferior, esquerdo e direito) */
-    }
-    footer {
-        .bloco-a {
-            display: flex; /* Define o layout do contêiner .bloco-a como Flexbox, permitindo um layout flexível dos itens internos */
-        }
-        .bloco-b {
-            display: flex; /* Define o layout do contêiner .bloco-b como Flexbox, permitindo um layout flexível dos itens internos */
-        }
-        .bloco-c {
-            display: flex; /* Define o layout do contêiner .bloco-c como Flexbox, permitindo um layout flexível dos itens internos */
-        }
-        .bloco-d {
-            display: flex; /* Define o layout do contêiner .bloco-d como Flexbox, permitindo um layout flexível dos itens internos */
-        }
-    }
-
 /*
 |------------------------------------------------------------------------------------------------------------------|
 |--------  AREA DE ELEMENTOS COMPARTILHADOS ENTRE AS PAGINAS  ------------|
@@ -114,11 +54,24 @@ nav {grid-area: nav;} /* Define a área do grid para o elemento nav */
         color: crimson; /* Define a cor do texto como vermelho escuro (crimson) para o elemento <h3> dentro de <main> */
         padding: 10px; /* Adiciona um preenchimento interno de 10px ao redor do conteúdo do elemento <h3> dentro de <main> */
     }
+    footer {
+        background-color: #000; /* Define a cor de fundo do footer como preto */
+        color: #fff; /* Define a cor do texto no footer como branco */
+        width: 100%;
+        height: auto;
+        margin-top: 10dvh;
+    }
         footer, header {
         .navbar .sidebar {
             list-style: none; /* Remove os marcadores ou números padrão das listas no elemento .sidebar dentro do header e footer */
             display: flex; /* Define o layout da lista como flexível, permitindo o alinhamento dos itens em linha ou coluna */
         }
+    }
+    body main a {
+        color: blue;
+    }
+    body.dark main a{
+        color: cyan;
     }
     header .linkbar {
         color: crimson; /* Define a cor do texto como vermelho escuro (crimson) para o elemento .linkbar dentro do header */
@@ -263,6 +216,60 @@ nav {grid-area: nav;} /* Define a área do grid para o elemento nav */
     }
 }
 }
+
+
+/*
+|------------------------------------------------------------------------------------------------------------------|
+|-----------   CONFIGURAÇÕES PARA PAGINAS EXIBIDAS EM DESKTOP    -------------|
+|------------------------------------------------------------------------------------------------------------------|
+*/
+@media (min-width: 767px) {
+    body header {
+        display: grid; /* Define o layout do header como grid */
+        grid-template-areas: /* Define as áreas do grid para o header */
+        ". . . btn" /* Define a área do botão (btn) no canto superior direito */
+        "name . . nav"; /* Define a área do nome (name) e da navegação (nav) na linha abaixo */
+        gap: 4em; /* Define o espaçamento entre os itens do grid */
+        margin-top: 10px;
+    }
+    body footer {
+        display: grid; /* Define o layout do footer como grid */
+        grid-template-areas: /* Define as áreas do grid para o footer */
+        "bloco-a bloco-b" /* Define a área para bloco-a e bloco-b na primeira linha */
+        "bloco-c bloco-c"; /* Define a área para bloco-c ocupando toda a segunda linha */
+        gap: 10px; /* Define o espaçamento entre os itens do grid */
+          }
+    header .navbar .sidebar .libar {
+        margin: 0 20px; /* Define a margem de 0 pixels no topo e na parte inferior, e 20 pixels nas laterais esquerda e direita */
+    }
+    header .navbar .sidebar {
+        justify-content: center; /* Alinha horizontalmente os itens no centro do contêiner (usando Flexbox) */
+        align-items: center;     /* Alinha verticalmente os itens no centro do contêiner (usando Flexbox) */
+    }
+    footer .bloco-a .navbar .sidebar {
+        display: flex;            /* Define o layout do contêiner como Flexbox para um layout flexível dos itens */
+        flex-direction: column;   /* Organiza os itens em uma coluna, do topo para a base do contêiner */
+        align-items: center;      /* Alinha os itens horizontalmente no centro do contêiner */
+        justify-content: start;   /* Alinha os itens verticalmente ao início do contêiner (topo) */
+    }
+    footer .bloco-b .navbar .sidebar .libar {
+        margin: 10px 10px; /* Define uma margem de 10 pixels em todos os lados (superior, inferior, esquerdo e direito) */
+    }
+    footer {
+        .bloco-a {
+            display: flex; /* Define o layout do contêiner .bloco-a como Flexbox, permitindo um layout flexível dos itens internos */
+        }
+        .bloco-b {
+            display: flex; /* Define o layout do contêiner .bloco-b como Flexbox, permitindo um layout flexível dos itens internos */
+        }
+        .bloco-c {
+            display: flex; /* Define o layout do contêiner .bloco-c como Flexbox, permitindo um layout flexível dos itens internos */
+        }
+        .bloco-d {
+            display: flex; /* Define o layout do contêiner .bloco-d como Flexbox, permitindo um layout flexível dos itens internos */
+        }
+    }
+
 /*
 |------------------------------------------------------------------------------------------------------------------|
 |---------------  AREA DE ELEMENTOS DA PAGINA SOBRE MIM  -----------------------------|
@@ -379,3 +386,44 @@ body.dark main .bloco-d {
             color: gold;
         }
     }
+}
+@media(max-width: 767px) {
+    body {
+        overflow-x: hidden;
+    }
+    header {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+    }
+    header {
+        .name {
+            margin-top: 3em;
+            font-size:  2em;
+        }
+    }
+    header .btn {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        transform: scale(0.8);
+    }
+    .sidebar {
+        flex-direction: column;
+    }
+    .libar {
+        margin: 10px 20px;
+    }
+    main .bloco-b .photo {
+        width: 40%;
+        height: auto;
+    }
+    main {
+        margin: 0 4dvh;
+    }
+    main .title {
+        font-size: 2em;
+    }
+}
