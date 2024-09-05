@@ -9,17 +9,31 @@ theme.addEventListener('click', () => {
     else {
         this.textContent = 'Off';
     }
-});
+});document.addEventListener('DOMContentLoaded', function() {
+    const openPopupLinks = document.querySelectorAll('.open-popup');
+    const popups = document.querySelectorAll('.popup-container');
+    const closeButtons = document.querySelectorAll('.close');
 
-document.getElementById('popupOpen1').addEventListener("click", function(event) {
-    event.preventDefault();
-    document.getElementById('popup').style.display = 'flex';
-});
-document.querySelector('.close').addEventListener('click', function(){
-    document.getElementById('popup').style.display = 'none';
-});
-document.addEventListener('click', function(event) {
-    if (event.target === document.getElementById('popup')) {
-        document.getElementById('popup').style.display = 'none';
-    }
+    // Abrir Popup
+    openPopupLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const popupId = this.getAttribute('data-popup');
+            document.getElementById(popupId).style.display = 'block';
+        });
+    });
+
+    // Fechar Popup
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            this.closest('.popup-container').style.display = 'none';
+        });
+    });
+
+    // Fechar Popup ao clicar fora
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('popup-container')) {
+            e.target.style.display = 'none';
+        }
+    });
 });

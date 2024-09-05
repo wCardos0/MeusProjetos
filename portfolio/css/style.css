@@ -25,7 +25,6 @@ nav {grid-area: nav;} /* Define a área do grid para o elemento nav */
 |--------  AREA DE ELEMENTOS COMPARTILHADOS ENTRE AS PAGINAS  ------------|
 |------------------------------------------------------------------------------------------------------------------|
 */
-.index-page, .about-page, .project-page {  /* Seleciona as páginas específicas */
     body {                          /* Aplica estilos ao elemento body */
         display: flex ; /* Define o layout do elemento como flexível */
         justify-content: center; /* Centraliza os itens horizontalmente no contêiner flexível */
@@ -45,6 +44,7 @@ nav {grid-area: nav;} /* Define a área do grid para o elemento nav */
         text-transform: uppercase; /* Transforma o texto dentro do elemento <h3> em maiúsculas */
         font-size: 1.5em; /* Define o tamanho da fonte como 1.5 vezes o tamanho da fonte do elemento pai */
     }
+
     footer .bloco-b {
         text-transform: uppercase; /* Transforma o texto dentro do contêiner .bloco-b em maiúsculas */
         font-size: 1.5em; /* Define o tamanho da fonte dentro de .bloco-b como 1.5 vezes o tamanho da fonte do elemento pai */
@@ -62,12 +62,12 @@ nav {grid-area: nav;} /* Define a área do grid para o elemento nav */
         margin-top: 10dvh;
     }
         footer, header {
-        .navbar .sidebar {
+        .sidebar {
             list-style: none; /* Remove os marcadores ou números padrão das listas no elemento .sidebar dentro do header e footer */
             display: flex; /* Define o layout da lista como flexível, permitindo o alinhamento dos itens em linha ou coluna */
         }
     }
-    body main a {
+    main a {
         color: blue;
     }
     body.dark main a{
@@ -96,7 +96,8 @@ nav {grid-area: nav;} /* Define a área do grid para o elemento nav */
         background-color: rgb(223, 222, 215); /* Define a cor de fundo para o elemento com a classe .bg */
         border-radius: 10px; /* Define o raio de arredondamento das bordas como 10 pixels, criando bordas arredondadas para o elemento */
 
-    }.dark {
+    }
+    .dark {
         background-color: #000; /* Define a cor de fundo como preto para elementos com a classe .dark */
         color: #fff; /* Define a cor do texto como branco para elementos com a classe .dark */
     }
@@ -215,41 +216,6 @@ nav {grid-area: nav;} /* Define a área do grid para o elemento nav */
         display: flex; /* Define o layout da lista como flexível, permitindo o alinhamento dos itens em linha ou coluna */
     }
 }
-.popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-}
-.popup-content {
-    background-color: #fff;
-    padding: 20px;
-    width: 50%;
-    height: auto;
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    color: black;
-}
-.close {
-    position: absolute;
-    background-color: red;
-    width: 30px;
-    height: 30px;
-    top: 10px;
-    right: 20px;
-    font-size: 20px;
-    cursor: pointer;
-    color: white;
-    font-weight: bold;
-}
-}
-
 
 /*
 |------------------------------------------------------------------------------------------------------------------|
@@ -257,7 +223,7 @@ nav {grid-area: nav;} /* Define a área do grid para o elemento nav */
 |------------------------------------------------------------------------------------------------------------------|
 */
 @media (min-width: 767px) {
-    body header {
+    header {
         display: grid; /* Define o layout do header como grid */
         grid-template-areas: /* Define as áreas do grid para o header */
         ". . . btn" /* Define a área do botão (btn) no canto superior direito */
@@ -265,27 +231,27 @@ nav {grid-area: nav;} /* Define a área do grid para o elemento nav */
         gap: 4em; /* Define o espaçamento entre os itens do grid */
         margin-top: 10px;
     }
-    body footer {
+    footer {
         display: grid; /* Define o layout do footer como grid */
         grid-template-areas: /* Define as áreas do grid para o footer */
         "bloco-a bloco-b" /* Define a área para bloco-a e bloco-b na primeira linha */
         "bloco-c bloco-c"; /* Define a área para bloco-c ocupando toda a segunda linha */
         gap: 10px; /* Define o espaçamento entre os itens do grid */
           }
-    header .navbar .sidebar .libar {
+    header  .sidebar .libar {
         margin: 0 20px; /* Define a margem de 0 pixels no topo e na parte inferior, e 20 pixels nas laterais esquerda e direita */
     }
-    header .navbar .sidebar {
+    header  .sidebar {
         justify-content: center; /* Alinha horizontalmente os itens no centro do contêiner (usando Flexbox) */
         align-items: center;     /* Alinha verticalmente os itens no centro do contêiner (usando Flexbox) */
     }
-    footer .bloco-a .navbar .sidebar {
+    footer .bloco-a  .sidebar {
         display: flex;            /* Define o layout do contêiner como Flexbox para um layout flexível dos itens */
         flex-direction: column;   /* Organiza os itens em uma coluna, do topo para a base do contêiner */
         align-items: center;      /* Alinha os itens horizontalmente no centro do contêiner */
         justify-content: start;   /* Alinha os itens verticalmente ao início do contêiner (topo) */
     }
-    footer .bloco-b .navbar .sidebar .libar {
+    footer .bloco-b .sidebar .libar {
         margin: 10px 10px; /* Define uma margem de 10 pixels em todos os lados (superior, inferior, esquerdo e direito) */
     }
     footer {
@@ -305,9 +271,42 @@ nav {grid-area: nav;} /* Define a área do grid para o elemento nav */
 
 /*
 |------------------------------------------------------------------------------------------------------------------|
+|---------------  AREA DE ELEMENTOS DA PAGINA INICIAL/INDEX    ------------------------|
+|------------------------------------------------------------------------------------------------------------------|
+*/
+    .index-page {
+        main {
+            display: grid;
+            grid-template-areas:
+            "bloco-a bloco-b"
+            "bloco-a bloco-b";
+            gap: 10px;
+        }
+        main .photo {
+            width: 50%;
+            height: auto;
+        }
+        main .bloco-a {
+            width: 500px;
+        }
+        main .bloco-b {
+            width: 500px;
+        }
+        main .title {
+            font-size: 2em;
+            color: crimson;
+            padding: 0 3em;
+        }
+        body.dark main .title {
+            color: gold;
+        }
+    }
+/*
+|------------------------------------------------------------------------------------------------------------------|
 |---------------  AREA DE ELEMENTOS DA PAGINA SOBRE MIM  -----------------------------|
 |------------------------------------------------------------------------------------------------------------------|
-*/.about-page {
+*/
+.about-page {
      main {
     display: grid; /* Define o layout do elemento main como um grid (grade), permitindo o uso de áreas e posicionamento de itens em uma estrutura de grid */
     grid-template-areas:
@@ -382,7 +381,7 @@ body.dark main .bloco-d {
     body.dark main {
         color: white;
     }
-    body main a {
+    main a {
         color: blue;
         font-style: italic;
     }
@@ -392,33 +391,14 @@ body.dark main .bloco-d {
 
     }
 }
-    .index-page {
-        main {
-            display: grid;
-            grid-template-areas:
-            "bloco-a bloco-b"
-            "bloco-a bloco-b";
-            gap: 10px;
-        }
-        main .photo {
-            width: 50%;
-            height: auto;
-        }
-        main .bloco-a {
-            width: 500px;
-        }
-        main .bloco-b {
-            width: 500px;
-        }
-        main .title {
-            font-size: 2em;
-            color: crimson;
-            padding: 0 3em;
-        }
-        body.dark main .title {
-            color: gold;
-        }
-    }
+/*
+|------------------------------------------------------------------------------------------------------------------|
+|---------------  AREA DE ELEMENTOS DA PAGINA PROJECT      -----------------------------|
+|------------------------------------------------------------------------------------------------------------------|
+*/
+.project-page {
+
+}
 }
 @media(max-width: 767px) {
     body {
